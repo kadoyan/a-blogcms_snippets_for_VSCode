@@ -1,0 +1,626 @@
+{
+	"ACMS Entry Summary": {
+		"scope": "html",
+		"prefix": "acmsSummary",
+		"body": [
+			"<!-- BEGIN_MODULE Entry_Summary id=\"\" -->",
+			"<div>",
+			"\t@include(\"/admin/module/setting.html\")",
+			"\t<!-- BEGIN notFound -->",
+			"\t<p>ただいまページを準備しております。もうしばらくお待ちください。</p>",
+			"\t<!-- END notFound -->",
+			"\t",
+			"\t<div>",
+			"\t\t<!-- BEGIN unit:loop -->",
+			"\t\t<!-- BEGIN entry:loop -->",
+			"\t\t<div><!-- BEGIN image:veil -->",
+			"\t\t\t<img src=\"%{ROOT_DIR}{path}\" alt=\"{alt}\"><!-- END image:veil --><!-- BEGIN noimage --><img src=\"/images/default/noimage.gif\" alt=\"\"><!-- END noimage -->",
+			"\t\t\t<h3>{title}</h3>",
+			"\t\t\t<p>{summary}</p>",
+			"\t\t\t<p><a href=\"{url}\">詳細をみる</a></p>",
+			"\t\t</div>",
+			"\t\t<!-- END entry:loop -->",
+			"\t\t<!-- END unit:loop -->",
+			"\t</div>",
+			"\t",
+			"\t<!-- BEGIN pager:veil -->",
+			"\t<div>",
+			"\t\t<ul>",
+			"\t\t\t<!-- BEGIN backLink --><li><a href=\"{url}\">« 前の{backNum}件</a></li><!-- END backLink -->",
+			"\t\t\t<!-- BEGIN page:loop --><li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href=\"{url}\"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --></span></li><!-- END page:loop -->",
+			"\t\t\t<!-- BEGIN lastPage:veil --><li><span>...</span></li><li{pageCurAttr}[raw]><span><a href=\"{lastPageUrl}\">{lastPage}</a></span></li><!-- END lastPage:veil -->",
+			"\t\t\t<!-- BEGIN forwardLink --><li><a href=\"{url}\">次の{forwardNum}件 »</a></li><!-- END forwardLink -->",
+			"\t\t</ul>",
+			"\t</div>",
+			"\t<!-- END pager:veil -->",
+			"</div>",
+			"<!-- END_MODULE Entry_Summary -->",
+			""
+		],
+		"description": "ACMS Entry Summary"
+	},
+	"ACMS Entry Summary Shorten": {
+		"scope": "html",
+		"prefix": "acmsSummaryShorten",
+		"body": [
+			"<!-- BEGIN_MODULE Entry_Summary id=\"\" -->",
+			"<div>",
+			"\t@include(\"/admin/module/setting.html\")",
+			"\t<!-- BEGIN notFound -->",
+			"\t<p>ただいまページを準備しております。もうしばらくお待ちください。</p>",
+			"\t<!-- END notFound -->",
+			"\t",
+			"\t<div>",
+			"\t\t<!-- BEGIN unit:loop -->",
+			"\t\t<!-- BEGIN entry:loop -->",
+			"\t\t<div><!-- BEGIN image:veil -->",
+			"\t\t\t<img src=\"%{ROOT_DIR}{path}\" alt=\"{alt}\"><!-- END image:veil --><!-- BEGIN noimage --><img src=\"/images/default/noimage.gif\" alt=\"\"><!-- END noimage -->",
+			"\t\t\t<h3>{title}</h3>",
+			"\t\t\t<p>{summary}</p>",
+			"\t\t\t<p><a href=\"{url}\">詳細をみる</a></p>",
+			"\t\t</div>",
+			"\t\t<!-- END entry:loop -->",
+			"\t\t<!-- END unit:loop -->",
+			"\t</div>",
+			"</div>",
+			"<!-- END_MODULE Entry_Summary -->",
+			""
+		],
+		"description": "ACMS Entry Summary"
+	},
+	"ACMS Entry List": {
+		"scope": "html",
+		"prefix": "acmsEntryList",
+		"body": [
+			"<!-- BEGIN_MODULE Entry_List id=\"\" -->",
+			"<div>",
+			"@include(\"/admin/module/setting.html\")",
+			"\t<ul>",
+			"\t\t<!-- BEGIN entry:loop -->",
+			"\t\t<li><a href=\"{url}\">{title}</a></li>",
+			"\t\t<!-- END entry:loop -->",
+			"\t</ul>",
+			"</div>",
+			"<!-- END_MODULE Entry_List -->"
+		],
+		"description": "ACMS Entry List"
+	},
+	"ACMS Entry Body": {
+		"scope": "html",
+		"prefix": "acmsEntryBody",
+		"body": [
+			"<!-- BEGIN_MODULE Entry_Body id=\"\" -->",
+			"<div>",
+			"\t<!-- BEGIN notFound -->",
+			"\t<p>ただいまページを準備しております。もうしばらくお待ちください。</p>",
+			"\t<!-- END notFound -->",
+			"",
+			"\t<!-- BEGIN serialNavi:veil -->",
+			"\t<ul class=\"acms-pager\">",
+			"\t\t<li>",
+			"\t\t\t<!-- BEGIN prevNotFound -->prev not found<!-- END prevNotFound -->",
+			"\t\t\t<!-- BEGIN prevLink -->",
+			"\t\t\t<a href=\"{url}\">« {name}[trim(27, '...')|escape]</a>",
+			"\t\t\t<!-- END prevLink -->",
+			"\t\t</li>",
+			"\t\t<li><a href=\"{upperUrl}\">一覧へ</a></li>",
+			"\t\t<li>",
+			"\t\t\t<!-- BEGIN nextNotFound -->next not found<!-- END nextNotFound -->",
+			"\t\t\t<!-- BEGIN nextLink -->",
+			"\t\t\t<a href=\"{url}\">{name}[trim(27, '...')|escape] » </a>",
+			"\t\t\t<!-- END nextLink -->",
+			"\t\t</li>",
+			"\t</ul>",
+			"\t<!-- END serialNavi:veil -->",
+			"",
+			"\t<!-- BEGIN entry:loop -->",
+			"\t@include(\"/admin/entry/revision-info.html\")",
+			"",
+			"\t<div class=\"acms-page-header\">",
+			"\t\t<!-- BEGIN pageHubHeader:veil -->",
+			"\t\t<div>",
+			"\t\t\t<p><!-- BEGIN date:veil --><time datetime=\"{date#Y}-{date#m}-{date#d}\">{date#Y}年{date#m}月{date#d}日</time>",
+			"\t\t\t\t<!-- END date:veil --><!-- BEGIN category:loop -->",
+			"\t\t\t\t<span class=\"acms-label\"><a href=\"{url}\">{name}</a></span>",
+			"\t\t\t\t<!-- BEGIN glue -->",
+			"\t\t\t\t< <!-- END glue -->",
+			"\t\t\t\t\t<!-- END category:loop --><!-- BEGIN new -->",
+			"\t\t\t\t\t<span class=\"acms-label acms-label-warning\">NEW</span>",
+			"\t\t\t\t\t<!-- END new -->",
+			"\t\t\t</p>",
+			"\t\t</div><!-- END pageHubHeader:veil -->",
+			"\t\t@include(\"/admin/entry/title.html\")",
+			"\t\t<!-- BEGIN title:veil -->",
+			"\t\t<h2><a href=\"{titleUrl}\">{title}</a></h2>",
+			"\t\t<!-- END title:veil -->",
+			"\t</div>",
+			"\t<div>",
+			"\t\t<div>",
+			"\t\t\t<!-- BEGIN unit:veil -->",
+			"\t\t\t<div class=\"acms-entry\">",
+			"\t\t\t\t<div class=\"acms-grid-r\">",
+			"\t\t\t\t\t@include(\"/include/unit.html\")",
+			"\t\t\t\t</div>",
+			"\t\t\t</div>",
+			"\t\t\t<hr class=\"clearHidden\">",
+			"\t\t\t<!-- END unit:veil -->",
+			"\t\t\t<!-- BEGIN continueLink:veil -->",
+			"\t\t\t<p><a href=\"{continueUrl}\" class=\"acms-btn-flat\"><span class=\"acms-icon-arrow-right\"></span>「{continueName}」の続きを読む</a></p>",
+			"\t\t\t<!-- END continueLink:veil -->",
+			"",
+			"\t\t\t<!-- BEGIN formBody -->",
+			"\t\t\t@include(\"/include/form/unit.html\")",
+			"\t\t\t<hr class=\"clearHidden\">",
+			"\t\t\t<!-- END formBody -->",
+			"",
+			"\t\t\t@include(\"/admin/entry/edit-%{IS_ADMIN}.html\")",
+			"",
+			"\t\t\t<!-- BEGIN tag:veil -->",
+			"\t\t\t<p>タグ：<!-- BEGIN tag:loop --><a href=\"{url}\" class=\"acms-inline-space\">{name}</a> <!-- END tag:loop --></p>",
+			"\t\t\t<!-- END tag:veil -->",
+			"",
+			"\t\t\t@include(\"/admin/entry/action.html\")",
+			"\t\t</div>",
+			"\t\t<!-- BEGIN footer:veil -->",
+			"\t\t<div>",
+			"\t\t\t<p class=\"acms-text-info\">Posted by {posterName} at {date#H}:{date#i} <a href=\"{inheritUrl}#permalink\">パーマリンク</a>",
+			"\t\t\t\t<!-- BEGIN commentAmount -->",
+			"\t\t\t\t<a href=\"{commentUrl}#comment\">コメント ( {commentAmount} )</a>",
+			"\t\t\t\t<!-- END commentAmount -->",
+			"\t\t\t</p>",
+			"\t\t</div>",
+			"\t\t<!-- END footer:veil -->",
+			"\t</div>",
+			"\t<!-- END entry:loop -->",
+			"",
+			"\t<!-- BEGIN pager:veil -->",
+			"\t<div class=\"acms-text-center\">",
+			"\t\t<ul class=\"acms-pager\">",
+			"\t\t\t<!-- BEGIN backLink -->",
+			"\t\t\t<li><a href=\"{url}\">« 前の{backNum}件</a></li><!-- END backLink -->",
+			"\t\t\t<!-- BEGIN firstPage:veil -->",
+			"\t\t\t<li{pageCurAttr}[raw]><span><a href=\"{firstPageUrl}\">{firstPage}</a></span></li><!-- END firstPage:veil -->",
+			"\t\t\t\t<!-- BEGIN omitBeforePage -->",
+			"\t\t\t\t<li>...</li><!-- END omitBeforePage -->",
+			"\t\t\t\t<!-- BEGIN page:loop --><!-- BEGIN glue --><!-- END glue -->",
+			"\t\t\t\t<li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href=\"{url}\"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --></span></li><!-- END page:loop -->",
+			"\t\t\t\t\t<!-- BEGIN omitAfterPage -->",
+			"\t\t\t\t\t<li>...</li><!-- END omitAfterPage -->",
+			"\t\t\t\t\t<!-- BEGIN lastPage:veil -->",
+			"\t\t\t\t\t<li{pageCurAttr}[raw]><span><a href=\"{lastPageUrl}\">{lastPage}</a></span></li><!-- END lastPage:veil -->",
+			"\t\t\t\t\t\t<!-- BEGIN forwardLink -->",
+			"\t\t\t\t\t\t<li><a href=\"{url}\">次の{forwardNum}件 »</a></li><!-- END forwardLink -->",
+			"\t\t</ul>",
+			"\t</div>",
+			"\t<!-- END pager:veil -->",
+			"</div>",
+			"",
+			"<!-- BEGIN simplePager:veil -->",
+			"<ul class=\"serialNav clearfix\">",
+			"\t<li class=\"serialNavItem serialNavItemPrev\"><!-- BEGIN prevPage -->",
+			"\t\t<a href=\"{url}\">« 前ページ</a>",
+			"\t\t<!-- END prevPage -->",
+			"\t</li>",
+			"\t<li class=\"serialNavItem serialNavItemNext\"><!-- BEGIN nextPage --><a href=\"{url}\">次ページ »</a>",
+			"\t\t<!-- END nextPage -->",
+			"\t</li>",
+			"</ul>",
+			"<!-- END simplePager:veil -->",
+			"",
+			"<!-- END_MODULE Entry_Body -->"
+		],
+		"description": "ACMS Entry Body"
+	},
+	"ACMS Entry Body Shorten": {
+		"scope": "html",
+		"prefix": "acmsEntryBodyShorten",
+		"body": [
+			"<!-- BEGIN_MODULE Entry_Body id=\"\" -->",
+			"<div>",
+			"\t<!-- BEGIN notFound -->",
+			"\t<p>ただいまページを準備しております。もうしばらくお待ちください。</p>",
+			"\t<!-- END notFound -->",
+			"",
+			"\t<!-- BEGIN entry:loop -->",
+			"\t@include(\"/admin/entry/revision-info.html\")",
+			"",
+			"\t<div class=\"acms-page-header\">",
+			"\t\t<!-- BEGIN pageHubHeader:veil -->",
+			"\t\t<div>",
+			"\t\t\t<p><!-- BEGIN date:veil --><time datetime=\"{date#Y}-{date#m}-{date#d}\">{date#Y}年{date#m}月{date#d}日</time>",
+			"\t\t\t\t<!-- END date:veil --><!-- BEGIN category:loop -->",
+			"\t\t\t\t<span class=\"acms-label\"><a href=\"{url}\">{name}</a></span>",
+			"\t\t\t\t<!-- BEGIN glue -->",
+			"\t\t\t\t< <!-- END glue -->",
+			"\t\t\t\t\t<!-- END category:loop --><!-- BEGIN new -->",
+			"\t\t\t\t\t<span class=\"acms-label acms-label-warning\">NEW</span>",
+			"\t\t\t\t\t<!-- END new -->",
+			"\t\t\t</p>",
+			"\t\t</div><!-- END pageHubHeader:veil -->",
+			"\t\t@include(\"/admin/entry/title.html\")",
+			"\t\t<!-- BEGIN title:veil -->",
+			"\t\t<h2><a href=\"{titleUrl}\">{title}</a></h2>",
+			"\t\t<!-- END title:veil -->",
+			"\t</div>",
+			"\t<div>",
+			"\t\t<div>",
+			"\t\t\t<!-- BEGIN unit:veil -->",
+			"\t\t\t<div class=\"acms-entry\">",
+			"\t\t\t\t@include(\"/include/unit.html\")",
+			"\t\t\t</div>",
+			"\t\t\t<!-- END unit:veil -->",
+			"\t\t\t<!-- BEGIN continueLink:veil -->",
+			"\t\t\t<p><a href=\"{continueUrl}\" class=\"acms-btn-flat\"><span class=\"acms-icon-arrow-right\"></span>「{continueName}」の続きを読む</a></p>",
+			"\t\t\t<!-- END continueLink:veil -->",
+			"",
+			"\t\t\t<!-- BEGIN formBody -->",
+			"\t\t\t@include(\"/include/form/unit.html\")",
+			"\t\t\t<hr class=\"clearHidden\">",
+			"\t\t\t<!-- END formBody -->",
+			"",
+			"\t\t\t@include(\"/admin/entry/edit-%{IS_ADMIN}.html\")",
+			"",
+			"\t\t\t@include(\"/admin/entry/action.html\")",
+			"\t\t</div>",
+			"\t</div>",
+			"\t<!-- END entry:loop -->",
+			"<!-- END_MODULE Entry_Body -->"
+		],
+		"description": "ACMS Entry Body"
+	},
+	"ACMS Navigation": {
+		"scope": "html",
+		"prefix": "acmsNavigation",
+		"body": [
+			"<!-- BEGIN_MODULE Navigation id=\"\" -->",
+			"<div>",
+			"\t@include(\"/admin/module/setting.html\")",
+			"\t<div class=\"acms-navbar acms-margin-bottom-medium clearfix\">",
+			"\t<!-- BEGIN navigation:loop -->",
+			"\t\t<!-- BEGIN ul#front --><ul><!-- END ul#front -->",
+			"\t\t\t<!-- BEGIN li#front --><li {attr} class=\"c_{level}\" ><!-- END li#front -->",
+			"\t\t\t\t<!-- BEGIN link#front --><a href=\"{url}\" {attr}<!-- BEGIN_IF [{target}/nem] --></a> target=\"{target}\"<!-- END_IF -->><!-- END link#front -->",
+			"\t\t\t\t<!-- BEGIN label:veil -->{label}[raw]<!-- END label:veil -->",
+			"\t\t\t\t<!-- BEGIN link#rear --></a><!-- END link#rear -->",
+			"\t\t\t<!-- BEGIN li#rear --></li><!-- END li#rear -->",
+			"\t\t<!-- BEGIN ul#rear --></ul><!-- END ul#rear -->",
+			"\t<!-- END navigation:loop -->",
+			"\t</div>",
+			"</div>",
+			"<!-- END_MODULE Navigation -->"
+		],
+		"description": "ACMS Navigation"
+	},
+	"ACMS @include": {
+		"scope": "html",
+		"prefix": "acms@include",
+		"body": [
+			"@include(\"/\", {\"k\": \"v\"})"
+		],
+		"description": "ACMS File Include "
+	},
+	"ACMS IF Block": {
+		"scope": "html",
+		"prefix": "acmsIf",
+		"body": [
+			"<!-- BEGIN_IF [] -->",
+			"<!-- ELSE -->",
+			"<!-- END_IF -->"
+		],
+		"description": "ACMS If block"
+	},
+	"ACMS veil block": {
+		"scope": "html",
+		"prefix": "acmsVeilBlock",
+		"body": [
+			"<!-- BEGIN :veil -->",
+			"<!-- END :veil -->"
+		],
+		"description": "ACMS Veil block"
+	},
+	"ACMS Module_Field": {
+		"scope": "html",
+		"prefix": "acmsModuleField",
+		"body": [
+			"<!-- BEGIN_MODULE Module_Field id=\"\" -->",
+			"<!-- END_MODULE Module_Field -->"
+		],
+		"description": "ACMS Module_Field"
+	},
+	"ACMS navigation module": {
+		"scope": "html",
+		"prefix": "nav_acms",
+		"body": [
+			"<!-- BEGIN_MODULE Navigation -->",
+			"<div>",
+			"\t@include(\"/admin/module/setting.html\")",
+			"\t<div class=\"acms-navbar acms-margin-bottom-medium clearfix\">",
+			"\t<!-- BEGIN navigation:loop -->",
+			"\t\t<!-- BEGIN ul#front --><ul><!-- END ul#front -->",
+			"\t\t\t<!-- BEGIN li#front --><li {attr} class=\"c_{level}\" ><!-- END li#front -->",
+			"\t\t\t\t<!-- BEGIN link#front --><a href=\"{url}\" {attr} target=\"{target}\"><!-- END link#front -->",
+			"\t\t\t\t<!-- BEGIN label:veil -->{label}[raw]<!-- END label:veil -->",
+			"\t\t\t\t<!-- BEGIN link#rear --></a><!-- END link#rear -->",
+			"\t\t\t<!-- BEGIN li#rear --></li><!-- END li#rear -->",
+			"\t\t<!-- BEGIN ul#rear --></ul><!-- END ul#rear -->",
+			"\t<!-- END navigation:loop -->",
+			"\t</div>",
+			"</div>",
+			"<!-- END_MODULE Navigation -->"
+		],
+		"description": "ACMS Navigation Module"
+	},
+	"ACMS Touch_Top": {
+		"scope": "html",
+		"prefix": "acmsTouchTop",
+		"body": [
+			"<!-- BEGIN_MODULE Touch_Top -->",
+			"<!-- END_MODULE Touch_Top -->"
+		],
+		"description": "ACMS Touch Top"
+	},
+	"ACMS Touch_NotTop": {
+		"scope": "html",
+		"prefix": "acmsTouchNotTop",
+		"body": [
+			"<!-- BEGIN_MODULE Touch_NotTop -->",
+			"<!-- END_MODULE Touch_NotTop -->"
+		],
+		"description": "ACMS Touch Not Top"
+	},
+	"ACMS Touch_Login": {
+		"scope": "html",
+		"prefix": "acmsTouchLogin",
+		"body": [
+			"<!-- BEGIN_MODULE Touch_Login -->",
+			"<!-- END_MODULE Touch_Login -->"
+		],
+		"description": "ACMS Touch_Login"
+	},
+	"picture": {
+		"scope": "html",
+		"prefix": "picture",
+		"body": [
+			"<picture>",
+			"<source srcset=\"\" media=\"(max-width: )\">",
+			"<source srcset=\"%\" media=\"(min-width: )\">",
+			"<img src=\"\" alt=\"\">",
+			"</picture>"
+		],
+		"description": "Picture element with source"
+	},
+	"All meta": {
+		"scope": "html",
+		"prefix": "meta_all",
+		"body": [
+			"<meta charset=\"UTF-8\">",
+			"<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+			"<meta name=\"copyright\" content=\"\">",
+			"<meta name=\"author\" content=\"\">",
+			"<meta property=\"og:type\" content=\"\">",
+			"<meta property=\"og:site_name\" content=\"\">",
+			"<meta property=\"og:image\" content=\"common/images/OGP.png\">",
+			"<meta property=\"og:title\" content=\"\">",
+			"<meta name=\"twitter:card\" content=\"summary_large_image\">",
+			"<meta name=\"twitter:image\" content=\"common/images/OGP.png\">",
+			"<meta name=\"twitter:title\" content=\"\">",
+			"<meta name=\"description\" content=\"\">",
+			"<meta property=\"og:description\" content=\"\">",
+			"<meta name=\"twitter:description\" content=\"\">",
+			"<meta name=\"keywords\" content=\"\">",
+			"<meta property=\"og:locale\" content=\"ja_JP\">",
+			"<meta property=\"og:url\" content=\"\">",
+			"<link rel=\"canonical\" href=\"\">",
+			"<link rel=\"shortcut icon\" href=\"common/images/favicon.ico\">",
+			"<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"common/images/apple-touch-icon.png\">",
+			"",
+			"<link rel=\"stylesheet\" href=\"common/dist/css/bulma.min.css\">",
+			"<link rel=\"stylesheet\" href=\"common/dist/css/common.min.css\">",
+			"<link href=\"https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap\" rel=\"stylesheet\">"
+		],
+		"description": "All meta and link tags"
+	},
+	"ACMS form": {
+		"scope": "html",
+		"prefix": "acmsForm",
+		"body": [
+			"<!-- BEGIN_MODULE Form -->",
+			" ",
+			"<!-- BEGIN step-->",
+			"<!-- 新規 -->",
+			"@include(\"/contact/form/input.html\")",
+			"<!-- END step -->",
+			" ",
+			"<!-- BEGIN step#reapply -->",
+			"<!-- 修正 -->",
+			"@include(\"/contact/form/input.html\")",
+			"<!-- END step#reapply -->",
+			" ",
+			"<!-- BEGIN step#confirm -->",
+			"<!-- 確認 -->",
+			"@include(\"/contact/form/confirm.html\")",
+			"<!-- END step#confirm -->",
+			" ",
+			"<!-- BEGIN step#result -->",
+			"<!-- 完了 -->",
+			"<!-- END step#result -->",
+			" ",
+			"<!-- END_MODULE Form -->"
+		],
+		"description": "Form block for acms"
+	},
+	"ACMS form input": {
+		"scope": "html",
+		"prefix": "acmsFormInput",
+		"body": [
+			"<form action=\"?step=reapply\" method=\"post\" class=\"inquiry\" enctype=\"multipart/form-data\">",
+			"\t",
+			"\t<!-- ここにフォームの内容を入力 -->",
+			"\t",
+			"\t<input type=\"hidden\" name=\"step\" value=\"confirm\">",
+			"\t<input type=\"hidden\" name=\"id\" value=\"フォームIDを設定する\">",
+			"\t<p class=\"center\">",
+			"\t\t<button type=\"submit\" name=\"ACMS_POST_Form_Confirm\">送信内容の確認へ</button>",
+			"\t</p>",
+			"</form>"
+		],
+		"description": "ACMS Form input part snippet"
+	},
+	"ACMS Blog_Field": {
+		"scope": "html",
+		"prefix": "acmsblogfield",
+		"body": [
+			"<!-- BEGIN_MODULE Blog_Field --><!-- END_MODULE Blog_Field -->"
+		],
+		"description": "ACMS Blog_Field"
+	},
+	"ACMS Module Setting": {
+		"scope": "html",
+		"prefix": "acmsModuleSetting",
+		"body": [
+			"@include(\"/admin/module/setting.html\")"
+		],
+		"description": "ACMS Module setting block"
+	},
+	"ACMS form confirm": {
+		"scope": "html",
+		"prefix": "acmsFormComfirm",
+		"body": [
+			"<form action=\"\" method=\"post\" enctype=\"multipart/form-data\">",
+			"\t<input type=\"hidden\" name=\"step\" value=\"reapply\" />",
+			"\t<input type=\"hidden\" name=\"takeover\" value=\"{takeover}\" />",
+			"\t<input type=\"submit\" name=\"ACMS_POST_Form_Chain\" value=\"入力画面へ戻る\" />",
+			"</form>",
+			"<form action=\"\" method=\"post\" enctype=\"multipart/form-data\">",
+			"\t<input type=\"hidden\" name=\"step\" value=\"result\" />",
+			"\t<input type=\"hidden\" name=\"To[]\" value=\"{email}\" />",
+			"\t<input type=\"hidden\" name=\"takeover\" value=\"{takeover}\" />",
+			"\t<input type=\"hidden\" name=\"id\" value=\"formtest\" />",
+			"\t<input type=\"submit\" name=\"ACMS_POST_Form_Submit\" value=\"送信\" />",
+			"</form>"
+		],
+		"description": "ACMS form confirming codes"
+	},
+	"ACMS build global vars": {
+		"scope": "html",
+		"prefix": "acmsOptBuildGlobalVars",
+		"body": [
+			"[buildGlobalVars]"
+		],
+		"description": "ACMS Build Global Vars"
+	},
+	"ACMS Date Format": {
+		"scope": "html",
+		"prefix": "acmsDateFormat",
+		"body": [
+			"<time datetime=\"{date#Y}-{date#m}-{date#d}\">{date#Y}/{date#m}/{date#d}({date#week})</time>"
+		],
+		"description": "ACMS Date format"
+	},
+	"ACMS Entry_Field": {
+		"scope": "html",
+		"prefix": "acmsentryfield",
+		"body": [
+			"<!-- BEGIN_MODULE Entry_Field -->",
+			"<!-- END_MODULE Entry_Field -->"
+		],
+		"description": "ACMS Entry_Field"
+	},
+	"ACMS touch_category": {
+		"scope": "html",
+		"prefix": "acmsTouchCategory",
+		"body": [
+			"<!-- BEGIN_MODULE Touch_Category -->",
+			"<!-- END_MODULE Touch_Category -->"
+		],
+		"description": "ACMS touch_category module"
+	},
+	"ACMS modulefield": {
+		"scope": "html",
+		"prefix": "acmsModuleField",
+		"body": [
+			"<!-- BEGIN moduleField -->",
+			"<!-- END moduleField -->"
+		],
+		"description": "ACMS Module_Field"
+	},
+	"ACMS Touch NotEdit": {
+		"scope": "html",
+		"prefix": "acmsTouchNotEdit",
+		"body": [
+			"<!-- BEGIN_MODULE Touch_NotEdit -->",
+			"<!-- END_MODULE Touch_NotEdit -->"
+		],
+		"description": "ACMS Touch NotEdit"
+	},
+	"ACMS Category Field": {
+		"scope": "html",
+		"prefix": "acmsCategoryField",
+		"body": [
+			"<!-- BEGIN_MODULE Category_Field -->",
+			"<!-- END_MODULE Category_Field -->"
+		],
+		"description": "ACMS Category Field"
+	},
+	"ACMS Media Path": {
+		"scope": "html",
+		"prefix": "acmsMediaPath",
+		"body": [
+			"%{MEDIA_ARCHIVES_DIR}"
+		],
+		"description": "ACMS Media directry value"
+	},
+	"ACMS Simple Pager": {
+		"scope": "html",
+		"prefix": "acmsSimplePager",
+		"body": [
+			"<!-- BEGIN simplePager:veil -->",
+			"<ul class=\"\">",
+			"<li class=\"\"><!-- BEGIN prevPage -->",
+			"<a href=\"{url}\">前ページ</a>",
+			"<!-- END prevPage -->",
+			"</li>",
+			"<li class=\"\"><!-- BEGIN nextPage --><a href=\"{url}\">次ページ</a>",
+			"<!-- END nextPage -->",
+			"</li>",
+			"</ul>",
+			"<!-- END simplePager:veil -->"
+		],
+		"description": "ACMS Simple Pager for Entry body"
+	},
+	"ACMS Serial Navigation": {
+		"scope": "html",
+		"prefix": "acmsserialnav",
+		"body": [
+			"<!-- BEGIN serialNavi:veil -->",
+			"<ul class=\"\">",
+			"<li>",
+			"<!-- BEGIN prevNotFound -->prev not found<!-- END prevNotFound -->",
+			"<!-- BEGIN prevLink -->",
+			"<a href=\"{url}\">« {name}[trim(27, '...')|escape]</a>",
+			"<!-- END prevLink -->",
+			" </li>",
+			"<li><a href=\"{upperUrl}\">一覧へ</a></li>",
+			"<li> ",
+			"<!-- BEGIN nextNotFound -->next not found<!-- END nextNotFound -->",
+			"<!-- BEGIN nextLink -->",
+			"<a href=\"{url}\">{name}[trim(27, '...')|escape] » </a>",
+			"<!-- END nextLink -->",
+			"</li>",
+			"</ul>",
+			"<!-- END serialNavi:veil -->"
+		],
+		"description": "ACMS Serial Navigation for Entry body"
+	},
+	"ACMS color picker": {
+		"scope": "html",
+		"prefix": "acmscColorPicker",
+		"body": [
+			"<input class=\"theme_color\" type=\"text\" name=\"theme_color\" value=\"\" placeholder=\"#FF0000\" />",
+			"<input type=\"hidden\" name=\"field[]\" value=\"theme_color\" />",
+			"&nbsp;",
+			"<button class=\"js-acms-color-picker-submit acms-admin-btn-admin\" data-target=\".theme_color\">色を選択</button>"
+		],
+		"description": "ACMS Color Picker on admin screen"
+	}
+}
